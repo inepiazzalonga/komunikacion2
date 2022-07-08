@@ -1,0 +1,866 @@
+/* Tipografia */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+@font-face {
+   font-family: asap-semiB;
+   src: url("../font/asap/Asap-SemiBold.otf");
+}
+
+@font-face {
+   font-family: asap;
+   src: url("../font/asap/Asap-Regular.otf");
+}
+
+@font-face {
+   font-family: cocogoose;
+   src: url("../font/cocogoos/Cocogoose\ Pro-trial.ttf");
+}
+
+/* Colores */
+$fucsia: #ec1f53;
+$violeta: #66256C;
+$amarillo: #FEC600;
+
+/* Reseteo de los estilos generales */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: asap;
+}
+body{
+   background-color: $amarillo;
+}
+
+a {
+   text-decoration: none!important;
+}
+
+button {
+   border: none;
+   cursor: pointer;
+}
+
+ul {
+   margin: 0!important;
+   margin-block-start: 0;
+   padding-inline-start: 0;
+}
+
+li {
+   list-style: none;
+}
+
+textarea {
+   resize: none;
+   border: .5px solid #555555;
+   padding: .35rem .5rem;
+   outline: none;
+}
+
+input {
+   background: none;
+   border: none;
+   padding: .35rem .5rem;
+}
+
+input:focus-visible {
+   outline: none;
+}
+
+select {
+   height: 28px;
+   outline: none;
+   border: none;
+}
+
+/* Estilos para text */
+.justify {
+   text-align: justify;
+}
+
+/* Estilos de margen */
+.mb_15 {
+   margin-bottom: 1.5rem;
+}
+
+/* Estilos Menú de Navegación */
+header {
+   background: #FFF;
+   width: 100%;
+   position: fixed;
+   top: 0;
+   z-index: 100000;
+
+   nav {
+      display: flex;
+      align-items: center;
+
+      img {
+         height: 60px;
+      }
+
+      .nav-item {
+         a {
+            color: $violeta;
+            transition: .3s;
+
+            &:hover {
+               border-bottom: 1px $violeta solid;
+               color: $violeta;
+            }
+         }
+      }
+   }
+}
+
+/* Banner del inicio */
+.homeBanner {
+   max-width: 60%;
+   margin: 1.5rem auto;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   .homeLogo {
+      height: 200px;
+   }
+
+   .homeGif {
+      margin-left: 15%;
+   }
+}
+
+.yellowBack__top {
+   background-image: url("../img/backgrounds/wave-top.svg");
+   background-size: 100%;
+   background-position-y: bottom;
+   width: 100%;
+   height: 500px;
+   margin-top: -100px;
+
+   h1 {
+      position: absolute;
+      margin: 9rem 13rem;
+      color: #FFF;
+      font-family: cocogoose;
+   }
+}
+
+.yellowBack__bottom {
+   background-image: url("../img/backgrounds/wave-bottom.svg");
+   background-size: 100%;
+   width: 100%;
+   height: 340px;
+   text-align: center;
+   padding-top: 2.5rem;
+
+   h2 {
+      font-family: cocogoose;
+      color: #FFF;
+   }
+}
+
+/* Sección Nosotros */
+.usSection {
+   background-color: $amarillo;
+   background-position-y: 140%;
+   background-size: cover;
+   background-repeat: no-repeat;
+   color: #FFF;
+   margin-top: -100px;
+   margin-bottom: -1px;
+}
+
+.flexContainer {
+   width: 90%;
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+}
+
+.col40 {
+   width: 40%;
+}
+
+.col60 {
+   width: 60%;
+   margin-left: 2.5rem;
+}
+
+/* Estilos para carrusel */
+.carousel-item {
+   text-align: center;
+
+   img {
+      width: 120px;
+   }
+}
+
+/* Estilos de contenedores */
+.width100 {
+   width: 100%;
+}
+
+/* Estilos para cards del team */
+.teamCard {
+   width: 31%;
+   height: auto;
+   background: #FFF;
+   border-radius: 15px 15px 0 0;
+   text-align: center;
+   padding: 1rem;
+   color: #000;
+   box-shadow: 5px 8px 17px 0px rgba(0, 0, 0, 0.2);
+
+   img {
+      width: 100%;
+      margin-bottom: .75rem;
+      border-radius: 10px 10px 0 0;
+   }
+}
+
+/* Estilos para cards de servicios */
+.services {
+   display: flex;
+   justify-content: space-between;
+   gap: 1em;
+   width: 95%;
+   margin: -220px auto 2.5rem;
+
+   .complete {
+      background: #FFF;
+      border-radius: 20px;
+      box-shadow: 5px 8px 17px 0px rgba(0, 0, 0, 0.3);
+      padding: 2rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+
+
+      &:hover .serviceCard {
+         transform: rotateY(180deg);
+      }
+
+      .serviceCard {
+         text-align: center;
+         position: relative;
+         width: 100%;
+         height: 100%;
+         transition: transform 1s;
+         transform-style: preserve-3d;
+         align-items: center;
+
+         .verMas {
+            background-color: transparent;
+            margin-top: 2em;
+            color: $fucsia;
+            font-family: cocogoose;
+         }
+      }
+
+      .serviceCard__front,
+      .serviceCard__back {
+         background-color: #FFF;
+         position: absolute;
+         backface-visibility: hidden;
+
+         .tiendaNube {
+            width: 10em;
+            height: auto;
+            margin-top: -2.5em;
+         }
+      }
+
+      .serviceCard__back {
+         transform: rotateY(180deg);
+         padding-top: 3em;
+
+         h2 {
+            font-family: cocogoose;
+            color: $violeta;
+            font-size: 20px;
+            margin-top: 2em;
+         }
+      }
+
+      img {
+         width: 60%;
+         margin-top: 125px;
+      }
+
+   }
+
+   .pair {
+      display: flex;
+      flex-wrap: wrap;
+
+      .serviceCard__small {
+         background: #FFF;
+         border-radius: 20px;
+         box-shadow: 5px 8px 17px 0px rgba(0, 0, 0, 0.3);
+         padding: 2rem 1.5rem;
+         display: flex;
+         flex-wrap: wrap;
+         align-content: center;
+         justify-content: center;
+         width: 100%;
+         height: 280px;
+
+         &:hover .serviceCard {
+            transform: rotateY(180deg);
+         }
+
+         .serviceCard {
+            text-align: center;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 1s;
+            transform-style: preserve-3d;
+
+            .verMas {
+               background-color: transparent;
+               margin-top: 0.5em;
+               color: $fucsia;
+               font-family: cocogoose;
+               margin-bottom: 0.5em;
+            }
+         }
+
+         .serviceCard__front,
+         .serviceCard__back {
+            background: #FFF;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+         }
+
+         .serviceCard__back {
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            margin-top: 1em;
+            font-size: 15px;
+
+            h2 {
+               font-family: cocogoose;
+               color: $violeta;
+               font-size: 20px;
+            }
+         }
+
+         img {
+            width: 80%;
+            margin-top: -1rem;
+         }
+      }
+   }
+
+   .btnPink {
+      background: #ec1f52c6;
+      padding: 0.5em;
+      color: #FFF;
+      text-align: center;
+      font-family: cocogoose;
+      font-size: 16px;
+      border-radius: 10px;
+      display: block;
+   }
+}
+
+.col25 {
+   width: 25%;
+}
+
+/* Estilos para Footer */
+.footerContainer {
+   background-color: $amarillo;
+   padding: 2rem;
+
+   footer {
+      display: flex;
+      justify-content: space-between;
+
+      div {
+         ul {
+            a {
+               color: #FFF;
+               font-size: 18px;
+               transition: .3s;
+
+               &:hover {
+                  color: $violeta;
+               }
+            }
+         }
+      }
+
+      .suscribeContainer {
+         width: 400px;
+         text-align: center;
+         color: #FFF;
+
+         input {
+            border-bottom: 2px solid $violeta;
+            text-align: center;
+            width: 80%;
+            font-size: 18px;
+            margin-bottom: 1rem;
+            color: #FFF;
+         }
+
+         .btnPurple {
+            width: 50%;
+            color: #FFF;
+            background: $violeta;
+            padding: .5rem 2rem;
+            border-radius: 1.5rem;
+            margin-bottom: 1rem;
+            transition: .3s;
+
+            &:hover {
+               background-color: $fucsia;
+            }
+         }
+
+         p {
+            font-size: 20px;
+         }
+      }
+
+      .socialMedia {
+         img {
+            margin-top: 1.5em;
+            width: 40px;
+            margin-bottom: 10px;
+         }
+      }
+   }
+}
+
+/* Estilos sección contacto */
+.contactForm {
+   max-width: 1200px;
+   margin: 5rem auto;
+   text-align: center;
+
+   h1 {
+      font-family: cocogoose;
+      color: $fucsia;
+   }
+
+   .contactForm__content {
+      margin: 2rem auto 0;
+      background-color: $violeta;
+      border-radius: 20px;
+      color: #FFF;
+      padding: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+         width: 10%;
+      }
+
+      form {
+         width: 60%;
+         margin-left: 2rem;
+
+         input,
+         select,
+         textarea {
+            text-align: center;
+            font-size: 18px;
+            width: 100%;
+            border: 0;
+            border-bottom: 1px solid $amarillo;
+            margin-bottom: 1rem;
+            color: #FFF;
+            background: none;
+            outline: 0;
+         }
+         .option{
+            background-color: transparent;
+            color: $violeta;
+         }
+
+         #button {
+            background: #ec1f53;
+            padding: .75rem;
+            width: 80%;
+            color: #FFF;
+            font-family: cocogoose;
+            transition: .3s;
+            font-size: 15px;
+            border-radius: 2rem;
+            border-style: none;
+
+            &:hover {
+               padding: .8rem;
+               width: 90%;
+               font-size: 16px;
+            }
+         }
+      }
+
+      .contactGif {
+         width: 15%;
+      }
+   }
+}
+
+/* Estilos Responsive */
+/* Celulares */
+@media only screen and (max-width: 575px) {
+   .homeBanner {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 7.5rem;
+
+      .homeLogo {
+         height: 180px;
+      }
+
+      .homeGif {
+         width: 300px;
+         margin-left: 0;
+      }
+   }
+
+   .yellowBack__top {
+      height: 475px;
+      display: flex;
+      justify-content: center;
+      background-position-y: -45px;
+
+      h1 {
+         margin: 12rem 0;
+      }
+   }
+
+   .usSection {
+      margin-top: -300px;
+      padding: 6rem 0 4rem;
+      flex-wrap: wrap;
+
+      .carousel-item {
+
+         img {
+            width: 90px;
+         }
+      }
+   }
+
+   .teamCard {
+      width: 90%;
+      margin: 1rem auto;
+   }
+
+   .yellowBack__bottom {
+      background-repeat: no-repeat;
+
+      h2 {
+         margin-top: -2.5rem;
+      }
+   }
+
+   .col40,
+   .col60 {
+      width: 90%;
+      margin: 0 auto;
+   }
+
+   .flexContainer {
+      flex-wrap: wrap;
+   }
+
+   .services {
+      flex-wrap: wrap;
+
+      .complete {
+         padding: 2rem;
+         margin-bottom: 1.5rem;
+         height: 500px;
+
+         img {
+            margin-top: 55px;
+         }
+      }
+
+      .pair {
+
+         .serviceCard__small {
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            height: 350px;
+
+            img {
+               width: 75%;
+            }
+         }
+      }
+   }
+
+   .col25 {
+      margin: 0 auto;
+      width: 90%;
+   }
+
+   .footerContainer {
+      padding: 1.5rem;
+
+      footer {
+         flex-wrap: wrap;
+         text-align: center;
+         justify-content: center;
+
+         .suscribeContainer {
+            width: 100%;
+            margin: 1.5rem 0;
+         }
+
+         ul {
+            padding-left: 0;
+            display: flex;
+            justify-content: space-between;
+
+            li {
+               margin: 0.5rem;
+            }
+         }
+      }
+   }
+
+   .contactForm {
+      width: 90%;
+
+      .contactForm__content {
+         padding: 2rem 1.5rem 3rem;
+
+         img {
+            display: none;
+         }
+
+         form {
+            width: 90%;
+            margin: 0 auto;
+         }
+      }
+   }
+
+}
+
+/* Tablet y celulares horizontales*/
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+   .homeBanner {
+      margin: 2.5rem auto;
+      max-width: 90%;
+
+      .homeLogo {
+         height: 175px;
+         margin-left: 5%;
+      }
+
+      .homeGif {
+         width: 300px;
+         margin-left: 0;
+      }
+   }
+
+   .yellowBack__top {
+      height: 220px;
+
+      h1 {
+         margin: 8rem 4rem;
+      }
+   }
+
+   .usSection {
+      margin-top: -10px;
+
+      .carousel-item {
+
+         img {
+            width: 150px;
+         }
+      }
+   }
+
+   .services {
+      flex-wrap: wrap;
+
+      .complete {
+         padding: 2.5rem;
+         margin-bottom: 2rem;
+         height: 400px;
+
+         .serviceCard__back {
+            padding-top: .5rem;
+         }
+
+         img {
+            margin-top: 35px;
+         }
+      }
+
+      .pair {
+
+         .serviceCard__small {
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+
+            img {
+               width: 60%;
+            }
+         }
+      }
+   }
+
+   .flexContainer {
+      flex-wrap: wrap;
+   }
+
+   .col40,
+   .col60 {
+      width: 90%;
+      margin: 0 auto;
+   }
+
+   .col25 {
+      width: 48%;
+   }
+
+   .contactForm {
+      width: 90%;
+   }
+
+}
+
+/* Laptop Chica a Mediana */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+
+   header {
+      nav {
+         .nav-item {
+            a {
+               &:hover {
+                  border-bottom: none;
+               }
+            }
+         }
+      }
+   }
+
+   .homeBanner {
+      margin: 0 auto;
+      max-width: 75%;
+
+      .homeLogo {
+         height: 175px;
+      }
+
+      .homeGif {
+         width: 350px;
+         margin-left: 5%;
+      }
+   }
+
+   .yellowBack__top {
+      height: 260px;
+
+      h1 {
+         font-size: 30px;
+         margin: 9rem 5rem;
+      }
+   }
+
+   .usSection {
+      margin-top: -50px;
+
+      .carousel-item {
+
+         img {
+            width: 100px;
+         }
+      }
+   }
+
+   .services {
+      flex-wrap: wrap;
+
+      .complete {
+         padding: 2.5rem;
+         margin-bottom: 2rem;
+         height: 600px;
+      }
+
+      .pair {
+
+         .serviceCard__small {
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+
+            img {
+               width: 45%;
+               margin-top: -2.25rem;
+            }
+         }
+      }
+   }
+
+   .col25 {
+      width: 48%;
+   }
+
+   .mb_15 {
+      margin-bottom: 0;
+   }
+
+   .contactForm {
+      width: 90%;
+   }
+}
+
+/* Laptops grandes a 4K */
+@media only screen and (min-width: 1201px) {
+
+   nav,
+   .flexContainer,
+   .services,
+   footer {
+      max-width: 1200px;
+   }
+
+   header {
+      nav {
+         margin: 0 auto;
+      }
+   }
+
+   .yellowBack__top {
+      margin-top: -20px;
+      height: 350px;
+
+      h1 {
+         max-width: 1200px;
+         margin: 0 auto;
+         padding: 6.5rem 3rem;
+         position: unset;
+      }
+   }
+
+   footer {
+      margin: 0 auto;
+   }
+}
+
+/* Reseteando Bootstrap */
+
+.navbar-toggler {
+   border: none !important;
+   color: #FFF !important;
+}
