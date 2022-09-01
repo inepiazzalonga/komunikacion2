@@ -1,11 +1,11 @@
 let btn = document.querySelector('#btnSus');
 
 document.querySelector('.suscribeContainer').addEventListener('submit', function (event) {
-    emailjs.init('PiYl-C39rIpuxbtAj');
+    emailjs.init('__grvxk77PVpTE4fF');
 
     event.preventDefault();
     btn.value = 'ENVIANDO...'
-    emailjs.sendForm('service_96ng8fg', 'template_8sbnztg', this)
+    emailjs.sendForm('service_7r135k4', 'template_gfpndwp', this)
         .then(function () {
             btnSus.value = 'ENVIAR';
             Swal.fire('Gracias por tu suscripción! Pronto recibirás todas nuestras novedades.')

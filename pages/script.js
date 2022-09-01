@@ -1,11 +1,11 @@
 let btn = document.querySelector('#button');
 
 document.getElementById('form').addEventListener('submit', function (event) {
-    emailjs.init('PiYl-C39rIpuxbtAj');
+    emailjs.init('__grvxk77PVpTE4fF');
 
     event.preventDefault();
     btn.value = 'ENVIANDO...'
-    emailjs.sendForm('service_96ng8fg', 'template_az2dycb', this)
+    emailjs.sendForm('service_7r135k4', 'template_vaxp5cc', this)
         .then(function () {
             btn.value = 'ENVIAR';
             Swal.fire('En breve nos pondremos en contacto 🙋')
